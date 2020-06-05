@@ -1,10 +1,10 @@
 require 'net/sftp'
 option = {
-  password: 'pass',
+  password: 'c83eDteUDT',
   port: 10220
 }
-Net::SFTP.start('localhost', 'sftp-without-key', option) do |sftp|
+Net::SFTP.start('localhost', 'sftp', option) do |sftp|
   #sftp.mkdir!("/remote/test")
   # put先のディレクトリは/から始まる
-  sftp.upload!(File.expand_path("./test.csv"), "/remote/test.csv")
+  sftp.upload!(File.expand_path("./test.csv"), "/incoming/test.csv")
 end
